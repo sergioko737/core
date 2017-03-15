@@ -4,16 +4,13 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/core.css' %}">
-        <title>Registration form</title>
+        <title>Registration successful</title>
     </head>
     <body>
       <body>
         {% block content %}
-            <h1>Registration form</h1>
-            <form method="POST" class="post-form">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Submit</button>
-            </form>
+            <h1>Person has been registered!</h1>
+            <b><a href="{% url 'reg_form' %}">Go back</a></b>
         {% endblock %}
       </body>
     </body>

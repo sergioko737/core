@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import Person
 from .forms import PersonForm
@@ -11,7 +11,10 @@ def reg_form(request):
             post = form.save(commit=False)
             post.published_date = timezone.now()
             post.save()
-            return render(request, 'core/reg_form.html', {'form': form})
+            return redirect('core/reg_success.html', {})
     else:
         form = PersonForm()
     return render(request, 'core/reg_form.html', {'form': form})
+
+def reg_success(request):
+    return render(request, 'core/reg_success.html', {})

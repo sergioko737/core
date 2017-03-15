@@ -12,3 +12,6 @@ class Person(models.Model):
     def register_person(self):
         self.reg_date = timezone.now()
         self.save()
+
+    def __str__(self):
+        return str(self.last_name + ' ' + self.first_name + ' - ' + self.email)

@@ -1,0 +1,13 @@
+body {
+  width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  min-width: 500px;
+}
+
+.post-form textarea, .post-form input {
+
+    width: 500px;
+}

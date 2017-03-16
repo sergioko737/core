@@ -4,7 +4,7 @@ from .models import Person
 from .forms import PersonForm
 
 # Create your views here.
-def reg_form(request):
+def reg_form(request): #view of registration form
     if request.method == "POST":
         form = PersonForm(request.POST)
         if form.is_valid():
@@ -16,5 +16,5 @@ def reg_form(request):
         form = PersonForm()
     return render(request, 'core/reg_form.html', {'form': form})
 
-def reg_success(request):
+def reg_success(request): #view after successful form submission
     return render(request, 'core/reg_success.html', {})
